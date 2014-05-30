@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<!-- Using DOM to add text to a page -->
+<html lang="en">
+  <head>
+    <title>Adding text to a page</title>
+    <meta charset = "utf-8" />
+    <script type = "text/javascript">
+      
+      
+        // Create a new p element and append it to a div 
+      function AddNode() {
+       var sentence = document.form1.sentence.value; 
+        var para = document.createElement("p"); 
+        var head=document.createElement("p");
+        var divObj = document.getElementById("divtest");
+ 
+        var txt = document.createTextNode(Sentence); 
+        para.appendChild(txt);
+
+        divObj.appendChild(para);
+      } //END AddNode
+      
+      
+      function AddText() {
+       
+        var node = document.createTextNode(" " + sentence);
+        document.getElementById("p1").appendChild(node); 
+        document.form1.sentence.value="";
+      } //end AddText
+    </script>
+  </head>
+  <body>
+    <h1>Create Your Own Content</h1>
+    <p id = "p1">Using the W3C DOM, you can dynamically add sentences to 
+                this paragraph. Type a sentence and click the Add button.
+    </p> 
+    
+       <div id = "divtest" class = "divStyle"> 
+      <p>Original text in div container.</p>
+    </div>
+    
+    
+    <form name = "form1" action = ""> 
+      <input type = "text" name = "sentence" size = "65" /> 
+      <input type = "button" value = "Add" onclick = "AddNode();" />
+    </form>
+  </body>
+</html>

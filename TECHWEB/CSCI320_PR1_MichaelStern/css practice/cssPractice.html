@@ -1,0 +1,148 @@
+<html>
+<head>
+<title>Fun with CSS3</title>
+
+<style>
+
+h1
+{
+text-shadow: 2px 2px Orange;
+}
+
+body
+{
+background-image:url('Flower Patter.jpg');
+}
+
+@keyframes anim
+{
+0%{margin-left:0%}
+25%{margin-left:40%;font-size:200%;}
+50%{margin-left:100%; font-size:200%;}
+75%{margin-left:40%;font-size:200%;}
+}
+@-webkit-keyframes anim
+{
+0%{margin-left:0%}
+25%{margin-left:40%;font-size:200%;}
+50%{margin-left:100%; font-size:200%;}
+75%{margin-left:40%;font-size:200%;}
+}
+
+#Fly
+{
+animation:anim 5s;
+-webkit-animation:anim 5s;
+position:absolute;
+
+
+animation-iteration-count:infinite;
+-webkit-animation-iteration-count:infinite; /*Safari and Chrome*/
+}
+
+#Object
+{
+background:gold;
+border:ridge gold;
+border-radius:12em/3em;
+width:200px;
+height:100px;
+vertical-align:middle;
+}
+
+#ipsum1
+{
+float:left;
+
+width:33%;
+height:100px;
+}
+
+#ipsum2
+{
+float:left;
+
+width:33%;
+height:100px;
+}
+
+#ipsum3
+{
+float:left;
+
+width:33%;
+height:100px;
+}
+
+iframe
+{
+
+transform: skew(15deg);
+-ms-transform: skew(15deg); /* IE 9 */
+-webkit-transform: skew(15deg); /* Safari and Chrome */
+position:relative;
+left:100px;
+
+width:750px;
+height:500px;
+}
+
+img
+{
+position:absolute;
+right:10px;
+bottom:-200px;
+
+}
+
+
+</style>
+</head>
+<body>
+<h1>Let's have fun with CSS3</h1>
+
+
+<h2><p id="Fly">Make Me Fly</p></h2>
+
+<br />
+<br />
+<br />
+<br />
+
+
+<div id="Object">
+background:gold;<br />
+border:ridge gold;<br />
+border-radius:12em/3em;<br />
+width:200px;<br />
+height:100px;<br />
+</div>
+<br />
+<br />
+<br />
+
+<div id="ipsum1"> 
+<span>
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt 
+ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+</span>
+</div>
+<div id="ipsum2"> 
+<span>
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+</span>
+</div>
+<div id="ipsum3"> 
+<span>
+dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+ sunt in culpa qui officia deserunt mollit anim id est laborum.
+</span>
+
+</div>
+
+<iframe src="http://www.morningside.edu"></iframe>
+<img src="mside.png">
+</div>
+</body>
+</html>

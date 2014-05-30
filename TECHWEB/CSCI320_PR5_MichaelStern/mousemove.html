@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<!-- This page demonstrates how mouse events are used.-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <title>How Mouse Events are used</title>
+    <META http-equiv="Content-Script-Type" content="type" />
+    
+    <style>
+    
+    div
+    {
+    width:320px;
+    height:150px;
+    background-image:url('arkham_asylum.gif');
+    position:absolute;
+    
+    }
+    
+    </style>
+    <script type = "text/javascript">
+      <!--
+      
+       var obj ;
+        function mouseStatus(e) {
+          //For IE
+          if (!e) 
+            e = window.event; 
+		obj.onmousemove=move;	
+
+          return;
+        } //end MouseStatus
+
+ function setToNull(e) {
+          //For IE
+          if (!e) 
+            e = window.event; 
+		obj.onmousemove=null;	
+		
+          return;
+        } 
+
+ function move(e) {
+          //For IE
+          if (!e) 
+            e = window.event;
+            
+        var x=e.clientX-50; 
+        var y=e.clientY-50;
+		document.getElementById("theDiv").style.left=x+"px";
+		document.getElementById("theDiv").style.top=y+"px";
+	
+          return;
+        } 
+
+        function registerHandlers() {
+          //Register the event handlers
+obj= document.getElementById("theDiv");
+          obj.onmousedown = mouseStatus;
+          obj.onmouseup=setToNull;
+
+          return;
+        } //end registerHandlers
+
+      // -->
+    </script>
+  </head>
+  <body onload = "registerHandlers()">
+
+<div id="theDiv" ></div>
+
+    </form>
+  </body>
+</html>

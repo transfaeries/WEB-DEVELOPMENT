@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<!-- Using DOM to add text to a page -->
+<html lang="en">
+  <head>
+    <title>Imaginary Blog</title>
+    <meta charset = "utf-8" />
+     <style type = "text/css">
+     
+    body { background-color:#539DC2;
+        }
+    
+     
+    .divStyle { background-color:white;}
+
+    h1 {text-align:center;}
+   
+   
+    form   {text-align:center;}
+  textarea{ width:300px; height:100px;+
+              
+
+    </style>
+    
+    <script type = "text/javascript">
+      
+      
+        // Create a new p element and append it to a div 
+        function AddNode() {
+        var sentence = document.form1.sentence.value; 
+        var para = document.createElement("b"); 
+        var head=document.createElement("p");
+        var divObj = document.getElementById("divtest");
+        var poster=document.form1.poster.value; 
+        var thisDate=new Date();
+		year=1900+thisDate.getYear()
+        if(poster=="")
+        {
+        poster="Anon";
+        }
+        var month=thisDate.getMonth()+1;
+        var day=thisDate.getDate();
+		var header="Posted by "+poster+" on "+month+"/"+day+"/"+year;
+        var txt = document.createTextNode(sentence); 
+        var brk=document.createElement("br")
+        para.appendChild(txt);
+		txt = document.createTextNode(header); 
+        head.appendChild(txt);
+
+head.appendChild(brk);
+		head.appendChild(para);
+        divObj.appendChild(head);
+
+
+document.form1.poster.value="";
+document.form1.sentence.value="";
+        
+      } //END AddNode
+      
+      
+      function AddText() {
+       
+        var node = document.createTextNode(" " + sentence);
+        document.getElementById("p1").appendChild(node); 
+        document.form1.sentence.value="";
+      } //end AddText
+    </script>
+  </head>
+  <body>
+    <h1>My Imaginary Blog</h1>
+    <p id = "p1">
+    </p> 
+    
+       <div id = "divtest" class = "divStyle"> 
+
+    </div>
+    
+    
+    <form name = "form1" action = ""> 
+    Enter your name(optional)<br />
+    <input type = "text" name = "poster" size = "20" /> <br /><br />
+      <textarea type = "text" name = "sentence" /> </textarea><br /> <br />
+      <input type = "button" value = "Add a blog Entry" onclick = "AddNode();" />
+    </form>
+  </body>
+</html>

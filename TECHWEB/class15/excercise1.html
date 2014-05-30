@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title> Dessert </title>
+    <style>
+      .hidden {display:none;}
+      .unhidden {display:block;}
+      div
+      {
+      border-style:solid;
+      width:300px;
+      
+      
+      }
+    </style>
+    <script src = "jquery-1.11.0.js"></script>
+    <script>
+      $(document).ready(function() {
+        $("#make").click(function() {
+        	
+            if(($("#choice").val()=="pie")||($("#choice").val()=="Pie"))
+            {
+            	$("#pie").show();
+            }
+            else if(($("#choice").val()=="ice cream")||($("#choice").val()=="ice Cream")||($("#choice").val()=="Ice cream")||($("#choice").val()=="Ice Cream"))
+            {
+           	 $("#ice").show();
+            } 
+        });
+      }); //end document.ready
+    </script>
+  </head>
+
+  <body>
+  <p> Would you like Ice Cream or Pie for dessert? <input type="text" id="choice"> <br />
+  <input type="button" id="make" value="make your choice">
+  <div id="pie" class="hidden">Would you like Cherry, Peach or Silk for your flavor?
+  <br /> <input type="text">
+  <br /> <input type="button" value="Choose your flavor"></div>
+  
+  <div id="ice" class="hidden">Would you like Chocolate, Vanilla or Strawberry on your Ice Cream?
+  <br /> <input type="text">
+  <br /> <input type="button" value="Choose your flavor"></div></div>
+  </body>
+</html>

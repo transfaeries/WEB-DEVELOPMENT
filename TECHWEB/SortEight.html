@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+<!-- This page is fun -->
+<html>
+  <head>
+    <title>Eight Numbers</title>
+    <meta charset = "utf-8" />
+    <script>
+      <!--
+
+        function ascending(x, y) {
+          //Negative: x < y
+          //Zero: x == y
+          //Positive: x > y
+          return (x-y);
+        }
+
+        function descending(x, y) {
+          //Negative: y < x
+          //Zero: y == x
+          //Positive: y > x
+          return (y-x);
+        }
+
+        function numArray(Size) {
+          //constructor for array object
+        	this.container= new Array(Size);
+          
+          for(var i=0;i<Size;i++)
+          {
+         	 this.container[i]=Math.floor(Math.random() * (100 - 1 + 1)) + 1;
+          }
+    
+		    this.size=Size;
+          //methods
+          
+          this.sortAsc = sortAsc;
+          this.sortDes = sortDes;
+          this.getMedian=getMedian;
+          this.print=arrayPrint;
+        }
+
+		function sortAsc()
+		{
+			this.container.sort(ascending);
+		}
+		
+		function sortDes()
+		{
+			this.container.sort(descending);
+		}
+		
+		Array.prototype.clone = function() {
+		return this.slice(0);
+		};
+		
+	
+		function getMedian()
+		{
+			var tempArray=this;
+			var returnValue=0;
+			
+			tempArray.container.sortAsc;
+			
+			if((tempArray.size%2)==0)
+			{
+				returnValue=tempArray.container[(tempArray.size/2)-1]+tempArray.container[(tempArray.size/2)]/2;
+			}	
+			else
+			{
+			
+				returnValue=tempArray.container[((tempArray.size+1)/2)-1];
+			}
+			
+			return returnValue;
+		}
+
+		function arrayPrint()
+		{
+
+			for(var i=0;i<this.size-1;i++)
+			{
+				document.write(this.container[i]);
+				document.write(",")
+			}
+		document.write(this.container[this.size-1])
+	}
+
+        document.write("<p>");
+        document.write("<strong>These are eight random numbers</strong>");
+        document.write("</p>");
+        
+        var numArray_1 = new numArray(5);
+        numArray_1.print();
+        document.write("<p>");
+		document.write("Sorted:  ");
+		numArray_1.sortAsc();
+		numArray_1.print();
+        document.write("</p>");
+        
+        document.write("<p>");
+        document.write("This is the median:  ");
+        var median=numArray_1.getMedian();
+        document.write(median);
+        document.write("</p>");
+        
+         
+      // -->
+    </script>
+  </head>
+  <body>
+  </body>
+</html>

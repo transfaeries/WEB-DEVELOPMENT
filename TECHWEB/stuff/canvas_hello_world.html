@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <meta charset=utf-8>
+  <title>canvas hello world</title>
+  <style>
+    canvas { 
+      margin: 50px auto; display: block; border: 1px solid lightGrey;
+      }
+  </style>
+  <body>
+    <canvas></canvas>
+    <script>
+      //context is to build the graphics
+      //querySelector is a new DOM API that searches on CSS elements
+      var ctx = document.querySelector('canvas').getContext('2d');
+      ctx.fillStyle = 'rgb(0, 255, 0)';  //duh - green
+      ctx.fillRect(10, 20, 50, 50);
+
+      ctx.strokeStyle = 'rgb(0, 182, 0)'; //umm, not as intense green
+      ctx.lineWidth = 5;
+      ctx.strokeRect(9, 19, 52, 52); //it's not what you think perverts
+    </script>
+  </body>
+</html>

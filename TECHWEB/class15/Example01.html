@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title> Peekaboo! </title>
+    <style>
+      .hidden {display:none;}
+      .unhidden {display:block;}
+    </style>
+    <script src = "jquery-1.11.0.js"></script>
+    <script>
+      $(document).ready(function() {
+        $("#narcissist").click(function() {
+            $("#narcissist").hide();
+            $("#narAns").show();
+        });
+        $("#gilderoy").click(function() {
+            $("#gilderoy").hide();
+            $("#gilAns").show();
+        });
+        $("#jokeText").click(function() {
+            $("#jokeText").hide();
+            $("#jokeAns").show();
+        });
+      }); //end document.ready
+    </script>
+  </head>
+
+  <body>
+    <h3>
+      The following are a couple of questions (riddles?).<br/>  
+      See if you can figure them out then click on them to check 
+      your answer.
+   </h3>
+
+    <div id="narcissist">
+      QUESTION: How does a narcissist's love poem begin?
+    </div>
+    <div id="narAns" class="hidden">
+      ANSWER: How do I love me, let me count the ways...
+    </div>
+    <hr>
+    <div id="gilderoy">
+      QUESTION: What is Gilderoy Lockhart's favorite color?
+    </div>
+    <div id="gilAns" class="hidden">
+      ANSWER: Lilac
+    </div>
+    <hr>
+    <div id="jokeText">
+      QUESTION: Why did the bicycle fall down?
+    </div>
+    <div id="jokeAns" class="hidden">
+      ANSWER: Because it was two tired.
+    </div>
+  </body>
+</html>

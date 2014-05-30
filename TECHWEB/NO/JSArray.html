@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<!-- This page demonstrates arrays. -->
+<html>
+  <head>
+    <title>An Array Demo</title>
+    <meta charset = "utf-8" />
+    <script>
+      <!--
+        function getFloat(message) {
+        /* print the message for the prompt
+           Use an error loop to check for non-numeric data */
+          var floatCandidate = parseFloat(prompt(message, ""));
+          while (isNaN(floatCandidate)) 
+            floatCandidate = parseFloat(prompt("Error! Non-numeric data\n" + 
+                                        message, ""));
+          return floatCandidate;
+        }
+
+        function cArea() {
+          return (Math.PI * Math.pow(this.radius, 2));
+        }
+        
+        function cCircumference() {
+          return (2 * Math.PI * this.radius);
+        }
+        
+        function getRadius() {
+          return this.radius;
+        }
+        
+        function setRadius(radius) {
+          this.radius = radius;
+        }
+
+        function Circle(radius) {
+          //constructor for the circle object
+          this.radius = radius;
+    
+          //circle methods
+          this.area = cArea;
+          this.circumference = cCircumference;
+          this.getRadius = getRadius;
+          this.setRadius = setRadius;
+        }
+
+        function tablePrint(caption) {
+        //print a table of circle radii, areas, and circumferences
+          document.write("<table border = '1'>");
+          document.write("<caption>" + caption + "</caption>");
+          document.write("<tr><th>Radius</th>");
+          document.write("<th>Area</th>");
+          document.write("<th>Circumference</th></tr>");
+            
+          for (i = 0; i < this.length; i++) {
+             document.write("<tr><td>" + this[i].radius + "</td><td>");
+             document.write(this[i].area().toFixed(2) + "</td><td>");
+             document.write(this[i].circumference().toFixed(2) + "</td></tr>");
+          }
+          document.write("</table>");
+        }  
+
+        Array.prototype.print = tablePrint;
+
+        document.write("<p>");
+        document.write("<strong>The Circle Object Array Page</strong></p>");
+        document.write("<p>");
+        document.write("This page creates an small array of " +
+                       "circle objects</p>");
+        
+        var circleArray = new Array(4);
+        circleArray[0] = new Circle(5);
+        circleArray[1] = new Circle(2.5);
+        circleArray[2] = new Circle(10.0);
+        var radius = getFloat("Radius:");
+        circleArray[3] = new Circle(radius);
+        circleArray.print("An Array of Circles");
+         
+      // -->
+    </script>
+  </head>
+  <body>
+  </body>
+</html>

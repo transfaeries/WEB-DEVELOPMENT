@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<!-- This page demonstrates the String object. -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <title>Java Script String</title>
+    <style type = "text/css">
+      td { padding: 5px;}
+    </style>
+    <meta http-equiv="content-script-type" content="type" />
+  </head>
+  <body>
+    <p>
+      <strong>The Ascii Character Codes</strong>
+    </p>
+    <script type = "text/javascript">
+      <!--
+        var letter;
+         document.write("<table border =  '1'>");
+         document.write("<caption>ASCII Table</caption><tr>");
+         for (var i = 32; i < 255; i++) {
+           letter = new String( "&#" + i + ";");
+           document.write("<td>" + letter +"<br/>" + i + "</td> ");
+           if ((i % 16) == 15)
+             document.write("</tr><tr>");
+         }
+        document.write("</table>");
+      //-->
+    </script> 
+  </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<!-- This page shows how DOM can be used to examine pages.  -->
+<html lang="en">
+  <head>
+    <title>Entry Points into DOM</title>
+    <meta charset = "utf-8" />
+    <script type = "text/javascript">
+      //Display the number of <h2> tags
+      function displayNumH2s() {
+        var aNodeList = document.getElementsByTagName("h2");
+        alert("There are " + aNodeList.length + " H2 tags in this document.");
+        return;
+      }
+
+      //Display contents of the headerB tag
+      function displayIdHeaderB() {
+        var headerBnode = document.getElementById("headerB");
+        var headerBtextNode = headerBnode.firstChild;
+        alert(headerBtextNode.nodeValue);
+        return;
+      }
+
+      //Display the document element's tag name
+      function displayDocumentTagName() {
+        alert(document.documentElement.tagName);
+        return;
+      }
+    </script>
+  </head>
+  <body>
+    <h2 id="headerA">This is Header A</h2>
+    <h2 id="headerB">This is Header B</h2>
+
+    <input type="button" onclick="displayNumH2s()" 
+           value="Display Number of H2 Tags" /><br />
+    <input type="button" onclick="displayIdHeaderB()" 
+           value="Display Id headerB Tag" /><br />
+    <input type="button" onClick="displayDocumentTagName()" 
+           value="Display Document Tag Name" />
+  </body>
+</html>

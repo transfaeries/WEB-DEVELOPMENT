@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+
+<!-- This page demonstrates array sorts. -->
+<html lang="en">
+  <head>
+    <title>Using JS Stack</title>
+    <meta charset = "utf-8" />
+    <script>
+      <!--
+        function getItem(message) {
+        /* print the message for the prompt
+           Use an error loop to check for non-numeric data */
+          var itemCandidate = prompt(message, "");
+          return itemCandidate;
+        }
+
+		 function getFloat(message) {
+        /* print the message for the prompt
+           Use an error loop to check for non-numeric data */
+          var floatCandidate = parseFloat(prompt(message, ""));
+          while (isNaN(floatCandidate)) 
+            floatCandidate = parseFloat(prompt("Error! Non-numeric data\n" + 
+                                        message, ""));
+          return floatCandidate;
+        }
+
+        function print() {
+          //print the contents of the array
+          var i;
+          document.write("<p>");
+          for (i = 0; i < this.length; i++) {
+				var pos=i+1;
+	           document.write("["+pos+"] = ")
+				document.write(this[i]+"<br />");           
+          }//END For
+        }
+
+        function fillArray() {
+          // let the user enter the array's values
+          var n = getItem("Enter the size of the array: ");
+          for (var i = 0;  i < n; i++) { 
+            x = getFloat("Enter [" + i  + " ]: ");
+            this.push(x);
+          }
+        }
+
+		function pushItem(item)
+		{
+			this.push(item);
+			document.write("--------------------------------------------- <br />");
+			document.write("<br /> pushed: ");
+			document.write(item);
+			document.write("<br />");
+			this.print();
+		};
+
+
+		function popItem()
+		{
+
+			if(this.length<1)
+			{
+				document.write("--------------------------------------------- <br /> ");
+				document.write("<br />Attempted pop, but Stack is empty <br/>");
+
+			}
+			else
+			{
+				var item=this[this.length-1];
+				this.pop();
+				document.write("--------------------------------------------- <br />");
+				document.write("<br /> popped: ");
+				document.write(item);
+				document.write("<br />");
+				this.print();
+			}
+		};
+		
+		function interaction()
+		{
+          var promptString = "Please enter: \n 1.  To Push\n 2. " + 
+                             "To Pop\n 3. To stop" ;
+          var choice = prompt(promptString, "");
+			switch(choice)
+			{
+				case "1": 
+					var item=getItem("Please enter the item to add");
+					this.pushItem(item);
+					return 1;
+					break; 
+			
+				case "2": 
+					this.popItem();
+					return 2;
+					break; 
+			
+				case "3": 
+					return 3;
+					break; 
+				default:
+					document.write("doing else");
+					return 4;
+			
+			};
+		}
+		
+        Array.prototype.print = print;
+        Array.prototype.interaction = interaction;
+        Array.prototype.fill = fillArray;
+        Array.prototype.pushItem=pushItem;
+        Array.prototype.popItem=popItem;
+
+        function ascending(x, y) {
+          //Negative: x < y
+          //Zero: x == y
+          //Positive: x > y
+          return (x-y);
+        }
+
+        function descending(x, y) {
+          //Negative: y < x
+          //Zero: y == x
+          //Positive: y > x
+          return (y-x);
+        }
+
+        
+        document.write("<p>");
+        document.write("<strong>The Stack Page</strong></p>");
+        document.write("<p>");
+        document.write("<em>Make your selection from the menu</em></p>");
+        document.write("<p>");
+        document.write("Please enter in a series of numbers at the prompt</p>");
+        
+        var MyArray = new Array();
+        document.write("<p>Original Array: ");
+	    MyArray.push("cat");
+	    MyArray.push("dog");
+        MyArray.print();
+    
+		var stop=false;
+		while(!stop)
+		{
+			var returnValue=MyArray.interaction();
+			if(returnValue==3)
+				stop=true;
+		}
+		
+
+        document.write("</p>");
+       
+      // -->
+    </script>
+  </head>
+  <body>
+  </body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+
+<!-- This page demonstrates array sorts. -->
+<html lang="en">
+  <head>
+    <title>Using JS Array Sorts</title>
+    <meta charset = "utf-8" />
+    <script>
+      <!--
+        function getFloat(message) {
+        /* print the message for the prompt
+           Use an error loop to check for non-numeric data */
+          var floatCandidate = parseFloat(prompt(message, ""));
+          while (isNaN(floatCandidate)) 
+            floatCandidate = parseFloat(prompt("Error! Non-numeric data\n" + 
+                                        message, ""));
+          return floatCandidate;
+        }
+
+        function print() {
+          //print the contents of the array
+          var i;
+          document.write("<p>");
+          for (i = 0; i < this.length; i++) {
+            if (i < this.length - 1)
+              document.write(this[i] + ", ");
+            else
+              document.write(this[i] + "</p>");
+          }//END For
+        }
+
+        function fillArray() {
+          // let the user enter the array's values
+          var n = getFloat("Enter the size of the array: ");
+          for (var i = 0;  i < n; i++) { 
+            x = getFloat("Enter [" + i  + " ]: ");
+            this.push(x);
+          }
+        }
+
+        Array.prototype.print = print;
+        Array.prototype.fill = fillArray;
+
+        function ascending(x, y) {
+          //Negative: x < y
+          //Zero: x == y
+          //Positive: x > y
+          return (x-y);
+        }
+
+        function descending(x, y) {
+          //Negative: y < x
+          //Zero: y == x
+          //Positive: y > x
+          return (y-x);
+        }
+
+        function getSortOrder(y) { 
+          var promptString = "Pick the sort order: \n0. Lexicographic\n1. " + 
+                             "Ascending\n2. Descending" ;
+          var choice = prompt(promptString, "");
+          switch (choice) {
+          case "0": document.write("<p>Lexicographic Order");
+                    y.sort();
+                    document.write("<br />Sorted : ");
+                    y.print();
+                    document.write("</p>");
+                    break;
+          case "1": document.write("<p>Sorted in Ascending Order");
+                    y.sort(ascending);
+                    document.write("<br />Sorted : ");
+                    y.print();
+                    document.write("</p>");
+                    break;
+          case "2": document.write("<p>Sorted in Descending Order");
+                    y.sort(descending)
+                    document.write("<br />Sorted : ");
+                    y.print();
+                    document.write("</p>");
+          }//END Case
+        }//END getSortOrder
+    
+        document.write("<p>");
+        document.write("<strong>The Array Sort Page</strong></p>");
+        document.write("<p>");
+        document.write("<em>This page lets the user enter an array of " +
+            "numbers.  The original array is printed, as is " +
+            "the array in sorted and reverse order.</em></p>");
+        document.write("<p>");
+        document.write("Please enter in a series of numbers at the prompt</p>");
+        
+        var MyArray = new Array();
+        MyArray.fill();
+        document.write("<p>Original Array: ");
+        MyArray.print();
+
+        getSortOrder(MyArray);
+
+        document.write("<br />Reversed: ");
+        MyArray.reverse();
+        MyArray.print();
+        document.write("</p>");
+       
+      // -->
+    </script>
+  </head>
+  <body>
+  </body>
+</html>

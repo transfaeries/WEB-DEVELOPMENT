@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<!-- This page gives more practice using functions, images, random numbers, 
+     and working with the document object model. -->
+<html> 
+  <head>
+    <meta charset = "utf-8" />
+    <title>The Coin Flipping Page</title>
+    <script>
+      
+        function toss() {
+          var heads;
+          var tails;
+          var result;
+
+
+          /* Flip the coin.
+             If the result is heads
+               Extract the value of heads from the text box.
+               Increment the value by one.
+               Put the new value of heads in the text box.
+               Change the image shown to heads.
+             Else
+               Extract the value of tails from the text box.
+               Increment the value by one.
+               Put the new value of tails in the text box.
+               Change the image shown to tails.
+           */
+
+	result=flip();
+	if (result==0)
+	{
+	
+	heads=parseInt(document.getElementById("heads").value);
+	document.getElementById("heads").value=heads+1;
+document.getElementById("image").innerHTML="<img src=\"quarter_head.jpg\">";
+	}
+
+	if (result==1)
+	{
+
+	tails=parseInt(document.getElementById("tails").value);
+	document.getElementById("tails").value=tails+1;
+
+document.getElementById("image").innerHTML="<img src=\"quarter_tail.jpg\">";
+	}
+        } //end function toss
+
+        function flip() {
+	return Math.floor((Math.random()*2)+0);
+          /* Produce a random number between zero and one */
+        } 
+
+      // 
+    </script>
+  </head>
+  <body>
+    <p>The Coin Flipper Page</p>
+    <p><em>Directions:</em> Just push the button. </p>
+    <table>
+      <tr>
+        <td>Heads</td>
+        <td><input type = "text" id = "heads" value = "0" /></td>
+      </tr>
+      <tr>
+        <td>Tails</td>
+        <td><input type = "text" id = "tails" value = "0" /></td>
+      </tr>
+      <tr>
+        <td><input type = "button" 
+                   value = "Flip Coin" 
+                   onclick = "toss()" /></td>
+        <td><div id = "image"><img src="quarter_tail.jpg"></div></td>
+<div id="Message"></div>
+      </tr>
+    </table>
+  </body>
+</html>

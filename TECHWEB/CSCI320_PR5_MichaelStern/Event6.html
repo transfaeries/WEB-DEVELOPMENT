@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<!-- This page demonstrates how mouse events are used.-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <title>How Mouse Events are used</title>
+    <META http-equiv="Content-Script-Type" content="type" />
+    <script type = "text/javascript">
+      <!--
+        function Click(e) {
+          //For IE
+          if (!e) 
+            e = window.event; 
+			if(e.shiftKey==1)
+			alert("You've triggered the "+e.type+" event")
+			if(e.ctrlKey==1||e.metaKey==1)
+			alert("You've triggered the event with"+e.currentTarget)
+			
+          return;
+        } //end MouseStatus
+
+        function registerHandlers() {// 
+ //Register the event handlers
+           var headerObj = document.getElementById("header");
+           headerObj.onclick=Click;
+ 		var paraObj = document.getElementById("paragraph");
+           paraObj.onclick=Click;
+           var linkObj = document.getElementById("link");
+           linkObj.onclick=Click;
+           var imageObj = document.getElementById("image");
+           imageObj.onclick=Click;
+      //     var bodObj = document.getElementById("bod");
+        //   bodObj.onclick=Click;
+          var buttObj = document.getElementById("butt");
+          buttObj.onclick=Click;
+           return;
+        } //end registerHandlers
+
+      // -->
+    </script>
+  </head>
+  <body onload = "registerHandlers()" id="bod">
+    <h1 id="header">Mouse Click Test</h1> 
+    <p id="paragraph"> Now is the time for all good Programmers to be lazy</p> 
+    <a href="http://google.com" id="link">A link to google.</a>
+    <img src="arkham_asylum.gif" id="image">
+    <input type="button" id="butt"  >
+    
+    </form>
+  </body>
+</html>

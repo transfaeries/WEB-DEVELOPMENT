@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<!-- This page exercises the String object. -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <title>String Conversion Exercise</title>
+    <meta http-equiv="content-script-type" content="type" />
+    <script type = "text/javascript">
+      <!--
+        function convertToLetter()
+        {
+        	var code=document.getElementById("userData").value;
+        	document.getElementById("answer").value= String.fromCharCode(code);
+        }
+        
+        function convertToASCII()
+        {
+        	var letter=new String(document.getElementById("userData").value);
+        	document.getElementById("answer").value= letter.charCodeAt(0);
+        }
+        
+        
+      //-->
+    </script>
+  </head>
+  <body>
+    <p>
+      <strong>The Ascii-Character Conversion Page</strong>
+    </p>
+    <p>
+    <em>This page converts Ascii numbers to their character equivalents 
+      and vice-versa.</em>
+    </p>
+    <ol> 
+      <li>Enter an ASCII number and Press the <em>Character</em> button 
+      to convert to a letter.</li>
+      <li> Enter a character and Press the <em>ASCII</em> button to 
+      convert to the ASCII value.</li>
+    </ol>
+    <form id = "letter">
+      <table>
+        <tr>
+          <td>
+            <strong>ASCII/Character</strong><br />
+            <input type = 'text' id = 'userData' size = "5" />
+          </td>
+        </tr>
+        <tr> 
+          <td>
+            <input type  = "button" value = "Character" 
+              onClick = "convertToLetter()" />
+            <input type = "button" value = "ASCII" 
+              onClick ="convertToASCII()" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <strong>Answer</strong><br />
+            <input type = 'text' id = 'answer' size = "5" />
+          </td>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>      

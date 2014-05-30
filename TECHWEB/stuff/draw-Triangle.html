@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <meta charset=utf-8>
+  <title>canvas triangles</title>
+  <style>
+    canvas { 
+      margin: 50px auto; display: block; border: 1px solid lightgrey;
+      }
+  </style>
+  <body>
+    <canvas></canvas>
+    <script>
+      //context is to build the graphics
+      //querySelector is a new DOM API that searches on CSS elements
+      var ctx = document.querySelector('canvas').getContext('2d');
+      // Set the style properties.
+      ctx.fillStyle   = '#00f'; //yea, blue
+      ctx.strokeStyle = '#f00'; //red
+      ctx.lineWidth   = 4;
+
+      ctx.beginPath();
+      // Start from the top-left point. Actually, this is probably unnecessary
+      ctx.moveTo(10, 10); // give the (x,y) coordinates
+      ctx.lineTo(100, 10);
+      ctx.lineTo(10, 100);
+      ctx.lineTo(10, 10);
+
+      // Done! Now fill the shape, and draw the stroke.
+      // Note: your shape will not be visible until call any of the two methods.
+      ctx.fill();
+      ctx.stroke();
+      ctx.closePath();
+    </script>
+  </body>
+</html>

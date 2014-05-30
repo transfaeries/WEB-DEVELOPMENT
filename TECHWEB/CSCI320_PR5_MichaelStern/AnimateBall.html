@@ -1,0 +1,110 @@
+<html>
+  <head>
+    <title>Draw Ball with callback</title>
+    <meta charset="utf-8" />
+    <script type="text/javascript">
+      var ballRadius = 10;
+      var boxx = 20;
+      var boxy = 30;
+      var boxwidth = 350;
+      var boxheight = 250;
+      var ballx = 50;
+      var bally = 60;
+      var ctx;
+      var greenIntensity = 0;
+      var speedx=5;
+      var speedy=5;
+     
+      function init(){  
+        ctx = document.getElementById('canvas').getContext('2d');  
+        ctx.lineWidth = ballRadius;
+        drawBall();  
+        setInterval(drawBall, 50);  
+      }  
+
+function change(){
+
+
+   var nux=document.getElementById("speedh").value;
+   var nuy=document.getElementById("speedv").value;
+   
+   if(speedx<0)
+	{ 
+  	  speedx=-nux;
+	}
+    else
+         {
+   	speedx=nux;
+   }
+    if (speedy<0)
+ 	{  
+ 	speedy=-nuy;
+ 	 }
+    else
+	{    
+    speedy=nuy;
+	}
+
+}
+      function drawBall(){  
+      var doDraw=true;
+      		
+      		if((ballx < (parseInt(boxx)+10)) || (ballx>boxwidth+15))
+			{
+			speedx=-speedx;
+			ballx=parseInt(ballx)+parseInt(speedx);
+			doDraw=false;
+			}
+			
+			
+		if((bally < (parseInt(boxy)+10))|| (bally > (parseInt(boxheight)+20)))	
+			{
+			speedy=-speedy;
+			bally=parseInt(bally)+parseInt(speedy);
+			doDraw=false;
+			}
+
+			
+			if(doDraw)
+			{
+	
+      
+        ctx.clearRect(boxx, boxy, boxwidth, boxheight);
+        ctx.beginPath();
+        ctx.fillStyle ="rgb(200, " + greenIntensity + ", 50)";
+        ctx.arc(ballx, bally, ballRadius, 0, Math.PI*2, true);
+        ctx.fill();
+        ctx.strokeRect(boxx, boxy, boxwidth, boxheight);
+
+        	ballx=parseInt(ballx)+parseInt(speedx);
+		bally=parseInt(bally)+parseInt(speedy);	
+}
+		
+		// document.getElementById("Reportingx").value=bally;
+// 		document.getElementById("Reportingy").value=speedy;
+
+        
+      } 
+
+
+    </script>
+  </head>
+  <body onLoad="init();">  
+    <canvas id="canvas" width="400" height="300">
+      Your browser doesn't support the HTML5 element canvas.
+      
+
+    </canvas>  
+     <div id="thediv" style="background:000AFF; width:50%">
+    
+      Horizontal Velocity<input type="number" id='speedh' value='5' /><br />
+    
+      Vertical Velocity<input type="number" id='speedv' value='5' /><br />
+      
+      
+      
+      <input type="button" id="change" value="CHANGE" onClick="change()">
+      <!-- <input type="text" id="Reportingx"><input type="text" id="Reportingy"> -->
+      </div>
+  </body>
+</html>

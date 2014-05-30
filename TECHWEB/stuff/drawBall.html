@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <title>Draw Ball with callback</title>
+    <meta charset="utf-8" />
+    <script type="text/javascript">
+      var ballRadius = 10;
+      var boxx = 20;
+      var boxy = 30;
+      var boxwidth = 350;
+      var boxheight = 250;
+      var ballx = 50;
+      var bally = 60;
+      var ctx;
+      var greenIntensity = 0;
+     
+      function init(){  
+        ctx = document.getElementById('canvas').getContext('2d');  
+        ctx.lineWidth = ballRadius;
+        drawBall();  
+        setInterval(drawBall, 100);  
+      }  
+
+      function drawBall(){  
+        ctx.clearRect(boxx, boxy, boxwidth, boxheight);
+        ctx.beginPath();
+        ctx.fillStyle ="rgb(200, " + greenIntensity + ", 50)";
+        ctx.arc(ballx, bally, ballRadius, 0, Math.PI*2, true);
+        ctx.fill();
+        ctx.strokeRect(boxx, boxy, boxwidth, boxheight);
+        greenIntensity += 5;
+        if (greenIntensity > 220) {
+          greenIntensity = 0;
+        }
+      } 
+
+
+    </script>
+  </head>
+  <body onLoad="init();">  
+    <canvas id="canvas" width="400" height="300">
+      Your browser doesn't support the HTML5 element canvas.
+    </canvas>  
+  </body>
+</html>

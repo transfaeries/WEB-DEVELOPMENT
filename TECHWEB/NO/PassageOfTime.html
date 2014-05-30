@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<!-- This page demonstrates the date object. -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <title>The Passage of Time</title>
+    <script type = "text/javascript">
+      <!--
+        var weekDays = new Array("Sunday", "Monday", "Tuesday", "Wednesday",
+                                 "Thursday", "Friday", "Saturday");
+        var monthString = new Array("January", "February", "March", "April",
+                                    "May", "June", "July", "August", 
+                                    "September", "October", "November", 
+                                    "December");
+
+          
+        function findDay(form) {  
+          with (form){
+            var dateString = elements[0].value + " ";
+            dateString = dateString + elements[1].value+ ", ";
+            dateString = dateString + elements[2].value + 
+                         " " + elements[3].value ;
+            dateString = dateString + ":" + elements[4].value + ":00";
+          }
+          var aDate = new Date(dateString);
+          var currentTime = new Date();
+          var difference=currentTime.getTime()-aDate.getTime();
+			var outputNumber=outputString=difference/(1000*60*60*24);
+          var outputString= "Days Passed:  "+Math.round(outputNumber);
+          var index = aDate.getDay();
+          
+          index = aDate.getMonth();
+          //outputString = outputString + monthString[index] + " ";
+          var year = 1900 + aDate.getYear();
+//          outputString = outputString + aDate.getDate() + ", " + year;
+          var hours = aDate.getHours();
+         
+        //  if (hours > 12) {
+      //      hours -=  12;
+  //          outputString = outputString + "\n" + hours + ":" +
+    //                       aDate.getMinutes() + " p.m.";
+          //}
+          //else {
+           // outputString = outputString + "\n" + hours + ":" +
+             //              aDate.getMinutes() + " a.m.";
+          //}
+          
+          form.output.value = outputString;
+        } //END function FindDay 
+          
+        function clean(form) {
+          // clean the textfields
+          for(i = 0; i < form.length - 2; i++)
+            form.elements[i].value = "";
+          form.elements[0].focus();
+        }
+      //-->
+    </script>
+  </head>
+  <body>
+    <p>
+      <strong>The Naval Time Page</strong>
+    </p>
+    <p>
+      Enter a month, day, and year in the textfields.
+      Enter the <em>Hours</em> in <strong>Millitary Time</strong>.
+     <br /> The page prints the days that have passed between your date and the current date.
+    </p>
+    <form>
+      <table>
+        <tr>
+          <td>Month<br />
+          <input type = 'text' name = 'month'  list="moty" size = "15" />
+		<datalist id="moty">
+ 			 <option value="January">
+			  <option value="February">
+			  <option value="March">
+			  <option value="April">
+			  <option value="May">
+			  <option value="June">
+			  <option value="July">
+			  <option value="August">
+			  <option value="September">
+			  <option value="October">
+			  <option value="November">
+			  <option value="December">
+			</datalist></td>
+          <td>Day<br />
+          <input type = 'text' name = 'day' size = "2" /></td>
+
+          <td>Year<br />
+            <input type = 'text' name = 'year' size = "4" value = "20" /></td>
+        </tr>
+
+        <tr>
+          <td>Hours<br />
+          <input type = 'text' name = 'hours' size = '2' /></td>
+          <td>Minutes<br />
+            <input type = 'text' name = 'seconds' size = '2' /></td>
+        </tr>
+
+        <tr>
+          <td colspan = '3'>Date<br />
+          <textarea  name = 'output' rows = '8' cols = '30'>
+          </textarea>
+          </td>
+        </tr>
+
+        <tr> 
+          <td> 
+            <input type = "button" value = "Done" 
+              onClick = "findDay(this.form)" />
+            <input type = "button" value = "Clear" 
+              onClick = "clean(this.form)" />
+          </td>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>

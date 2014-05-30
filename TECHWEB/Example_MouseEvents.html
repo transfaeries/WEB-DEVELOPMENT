@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<!-- This page demonstrates how mouse events are used.-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <title>How Mouse Events are used</title>
+    <META http-equiv="Content-Script-Type" content="type" />
+    <script type = "text/javascript">
+      <!--
+        function mouseStatus(e) {
+          //For IE
+          if (!e) 
+            e = window.event; 
+          var btn = e.button; 
+          var whichbtn = (btn < 2) ? "Left" : "Right"; 
+          var message = e.type + " : " + whichbtn + "\n"; 
+          document.form1.info.value += message;
+          return;
+        } //end MouseStatus
+
+        function registerHandlers() {
+          //Register the event handlers
+          var obj = document.getElementById("testlink");
+          obj.onmousedown = mouseStatus;
+          obj.onmouseup = mouseStatus; 
+          obj.onclick = mouseStatus; 
+          obj.ondblclick = mouseStatus;
+          return;
+        } //end registerHandlers
+
+      // -->
+    </script>
+  </head>
+  <body onload = "registerHandlers()">
+    <h1>Mouse Click Test</h1> 
+    <p> Click the mouse on the test link below.  A message below
+        will indicate which button was clicked.</p> 
+    <h2><a href = "#" id = "testlink">Test Link</a></h2>
+    <form name = "form1" action = ""> 
+      <textarea rows = "10" cols = "70" name = "info"></textarea>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+<html>
+<head>
+<title>HTML 5 Forms Excercise</title>
+<script type="text/javascript">
+function updateRange(val) 
+    {
+      document.getElementById('Attract').innerHTML=val; 
+    }
+
+</script>
+
+<style>
+div{font-family:Monospace,Couriel, sans-serif;}
+</style>
+</head>
+<body>
+<form>
+  Name <br /> &nbsp&nbsp<input type="text" name="fname" required ><br />
+  
+  Email<br /> &nbsp&nbsp<input type="email" name="Email"><br />
+ 
+ Shoesize<br /> &nbsp&nbsp<input type="number" width="20px" min="8" max="19">
+ &nbsp&nbsp<div style="color:blue; display:inline-block">number min=8 max=19</div>  <br/>
+ 
+
+  Date of Birth <br/>
+  &nbsp&nbsp<input type="date" name="DOB"> 
+  &nbsp&nbsp<div style="color:blue; display:inline-block">date</div>
+  <br/>
+
+Attractiveness<br/>
+  &nbsp&nbsp<input type="range" min="1" max="11" name="Attractiveness" value="1" step="1" onchange="updateRange(this.value);"><p style="display:inline-block" id="Attract">1</p>
+  &nbsp&nbsp<div style="color:blue ; display:inline-block"> range</div>  
+ <br/>
+ 
+ Part I.D.<br/>
+  &nbsp&nbsp<input type="text" pattern="[0-9]{1}[A-Z]{3}" placeholder="Digit followed by three upprecase letters" title="Must be Digit followed by Three(3) Uppercase letters name="part">
+ &nbsp&nbsp <div style="color:blue; display:inline-block">Regular Expressions</div>  
+  <br/>
+  
+ Comments? <br />
+ <textarea name="Comments"> </textarea>
+ &nbsp&nbsp<div style="color:blue; display:inline-block" >Text Area</div>  
+ 
+ <br/> <input type="submit" value="Send">
+</form>
+
+</body>
+</html>

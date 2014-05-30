@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<!-- Using DOM to add nodes (not just data) to the page. -->
+<html lang="en">
+  <head>
+    <title>Creating a New Element</title>
+    <meta charset = "utf-8" />
+    <style type = "text/css">
+    .divStyle { background-color:blue;
+                border-style:solid; 
+                color:white;
+              }
+    p         { color:yellow; 
+                font-size:150%;}
+    </style>
+    <script type = "text/javascript">
+      // Create a new p element and append it to a div 
+      function AddNode() {
+        var para = document.createElement("p"); 
+        var divObj = document.getElementById("divtest");
+
+        var txt = document.createTextNode("Wow! Hope this works!"); 
+        para.appendChild(txt);
+
+        divObj.appendChild(para);
+      } //END AddNode
+    </script>
+  </head>
+  <body onload = "AddNode();">
+    <div id = "divtest" class = "divStyle"> 
+      <p>Original text in div container.</p>
+    </div>
+  </body>
+</html>

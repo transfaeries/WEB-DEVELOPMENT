@@ -1,0 +1,75 @@
+<html>
+  <head>
+    <title>Draw Rings</title>
+    <meta charset="utf-8" />
+    <script type="text/javascript">
+      var ballRadius = 50;
+      var boxx = 20;
+      var boxy = 30;
+      var boxwidth = 350;
+      var boxheight = 250;
+      var ballx = 50;
+      var bally = 60;
+      var ctx;
+      var greenIntensity = 0;
+     
+      function init(){  
+        ctx = document.getElementById('canvas').getContext('2d');  
+       
+        ctx.lineWidth = 2;
+	    ctx.beginPath();
+	    ctx.strokeStyle="#F00000";
+		ctx.arc(150,150,100,0,2*Math.PI);
+		ctx.stroke();	
+		ctx.closePath();
+	    ctx.beginPath();
+	    ctx.strokeStyle="#0F0000";
+		ctx.arc(150,150,90,0,2*Math.PI);
+		ctx.stroke();	
+		ctx.closePath();	  
+		ctx.beginPath();
+		ctx.strokeStyle="#00F000";
+		ctx.arc(150,150,80,0,2*Math.PI);
+		ctx.stroke();	
+		ctx.closePath();
+		        
+	    ctx.beginPath();
+	    ctx.strokeStyle="#00AA00";
+		ctx.arc(150,150,70,0,2*Math.PI);
+		ctx.stroke();	
+		ctx.closePath();
+	    ctx.beginPath();
+	    ctx.strokeStyle="#F00FF0";
+		ctx.arc(150,150,60,0,2*Math.PI);
+		ctx.stroke();	
+		ctx.closePath();	  
+		ctx.beginPath();
+		ctx.strokeStyle="#000FFF";
+		ctx.arc(150,150,50,0,2*Math.PI);
+		ctx.stroke();	
+		ctx.closePath();
+		
+		
+	    ctx.beginPath();
+	    ctx.strokeStyle="#F000FF";
+		ctx.arc(150,150,40,0,2*Math.PI);
+		ctx.stroke();	
+		ctx.closePath();
+	    ctx.beginPath();
+	    ctx.strokeStyle="#F0FF0F";
+		ctx.arc(150,150,30,0,2*Math.PI);
+		ctx.stroke();	
+		ctx.closePath();	  
+
+
+      } 
+
+
+    </script>
+  </head>
+  <body onLoad="init();">  
+    <canvas id="canvas" width="400" height="300">
+      Your browser doesn't support the HTML5 element canvas.
+    </canvas>  
+  </body>
+</html>
